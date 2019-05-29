@@ -9,8 +9,9 @@ class CashRegister
   end  
   
   def add_item(title,price,q = 1)
-    @total = @total + (price*q) 
+    @total_new = @total + (price*q) 
     q.times {@items << title}
+    @total = @total_new
   end  
   
   def apply_discount
@@ -27,6 +28,6 @@ class CashRegister
   end  
   
   def void_last_transaction
-    @total = @total - 2*self.add_item(title,price,q)
+    
   end  
 end  
